@@ -104,7 +104,7 @@ class Ui_Dialog(object):
         QtCore.QObject.connect(self.pushButton_m20, QtCore.SIGNAL("pressed()"), self.massTally2)
         QtCore.QObject.connect(self.pushButton_m3, QtCore.SIGNAL("pressed()"), self.massImput)
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Steep Slope Conveyor", None))
+        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "dustRemovalMachine", None))
     
     def massImput(self):
          # 選択したオブジェクトを取得する
