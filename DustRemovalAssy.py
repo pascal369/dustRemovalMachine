@@ -23,26 +23,30 @@ class Ui_Dialog(object):
         #水路幅
         self.label_W = QtGui.QLabel('channelWidth',Dialog)
         self.label_W.setGeometry(QtCore.QRect(30, 13, 100, 22))
+        self.label_W.setStyleSheet("color: gray;")
         self.le_W = QtGui.QLineEdit('3400',Dialog)
-        self.le_W.setGeometry(QtCore.QRect(180, 10, 60, 20))
+        self.le_W.setGeometry(QtCore.QRect(180, 10, 60, 22))
         self.le_W.setAlignment(QtCore.Qt.AlignCenter)
         #水路高
         self.label_H = QtGui.QLabel('channelHeight',Dialog)
         self.label_H.setGeometry(QtCore.QRect(30, 38, 100, 22))
+        self.label_H.setStyleSheet("color: gray;")
         self.le_H = QtGui.QLineEdit('5500',Dialog)
-        self.le_H.setGeometry(QtCore.QRect(180, 35, 60, 20))
+        self.le_H.setGeometry(QtCore.QRect(180, 35, 60, 22))
         self.le_H.setAlignment(QtCore.Qt.AlignCenter)
         #ドライブシャフト高
         self.label_h1 = QtGui.QLabel('driveShaft hight',Dialog)
         self.label_h1.setGeometry(QtCore.QRect(30, 63, 100, 22))
+        self.label_h1.setStyleSheet("color: gray;")
         self.le_h1 = QtGui.QLineEdit('2964',Dialog)
-        self.le_h1.setGeometry(QtCore.QRect(180, 60, 60, 20))
+        self.le_h1.setGeometry(QtCore.QRect(180, 60, 60, 22))
         self.le_h1.setAlignment(QtCore.Qt.AlignCenter)
         #傾斜角
         self.label_sita = QtGui.QLabel('tiltAngle',Dialog)
         self.label_sita.setGeometry(QtCore.QRect(30, 88, 100, 22))
+        self.label_sita.setStyleSheet("color: gray;")
         self.le_sita = QtGui.QLineEdit('70',Dialog)
-        self.le_sita.setGeometry(QtCore.QRect(180, 85, 60, 20))
+        self.le_sita.setGeometry(QtCore.QRect(180, 85, 60, 22))
         self.le_sita.setAlignment(QtCore.Qt.AlignCenter)
 
 
@@ -61,7 +65,7 @@ class Ui_Dialog(object):
         self.label_6 = QtGui.QLabel(Dialog)
         self.label_6.setGeometry(QtCore.QRect(10, 185, 320, 400))
         self.label_6.setText("")
-        self.label_6.setAlignment(QtCore.Qt.AlignTop)
+        self.label_6.setAlignment(QtCore.Qt.AlignCenter)
         
         base=os.path.dirname(os.path.abspath(__file__))
         joined_path = os.path.join(base, "dustRemover.png")
@@ -71,26 +75,27 @@ class Ui_Dialog(object):
 
         #質量計算
         self.pushButton_m = QtGui.QPushButton('massCulculation',Dialog)
-        self.pushButton_m.setGeometry(QtCore.QRect(30, 155, 100, 23))
+        self.pushButton_m.setGeometry(QtCore.QRect(30, 135, 100, 22))
         self.pushButton_m.setObjectName("pushButton") 
         #質量集計
-        self.pushButton_m20 = QtGui.QPushButton('massTally_csv',Dialog)
-        self.pushButton_m20.setGeometry(QtCore.QRect(130, 155, 130, 23))
+        #self.pushButton_m20 = QtGui.QPushButton('massTally_csv',Dialog)
+        #self.pushButton_m20.setGeometry(QtCore.QRect(130, 155, 130, 22))
         self.pushButton_m2 = QtGui.QPushButton('massTally_SpreadSheet',Dialog)
-        self.pushButton_m2.setGeometry(QtCore.QRect(130, 180, 130, 23))
+        self.pushButton_m2.setGeometry(QtCore.QRect(130, 135, 130, 22))
         #質量入力
         self.pushButton_m3 = QtGui.QPushButton('massImput[kg]',Dialog)
-        self.pushButton_m3.setGeometry(QtCore.QRect(30, 205, 100, 23))
+        self.pushButton_m3.setGeometry(QtCore.QRect(30, 160, 100, 22))
         self.pushButton_m3.setObjectName("pushButton")  
         self.le_mass = QtGui.QLineEdit(Dialog)
-        self.le_mass.setGeometry(QtCore.QRect(130, 205, 50, 20))
+        self.le_mass.setGeometry(QtCore.QRect(130, 160, 50, 22))
         self.le_mass.setAlignment(QtCore.Qt.AlignCenter)  
         self.le_mass.setText('10.0')
         #密度
         self.lbl_gr = QtGui.QLabel('SpecificGravity',Dialog)
-        self.lbl_gr.setGeometry(QtCore.QRect(30, 230, 80, 12))
+        self.lbl_gr.setGeometry(QtCore.QRect(30, 185, 80, 22))
+        self.lbl_gr.setStyleSheet("color: gray;")
         self.le_gr = QtGui.QLineEdit(Dialog)
-        self.le_gr.setGeometry(QtCore.QRect(130, 230, 50, 20))
+        self.le_gr.setGeometry(QtCore.QRect(130, 185, 50, 22))
         self.le_gr.setAlignment(QtCore.Qt.AlignCenter)  
         self.le_gr.setText('7.85')
 
@@ -101,7 +106,7 @@ class Ui_Dialog(object):
  
         QtCore.QObject.connect(self.pushButton_m, QtCore.SIGNAL("pressed()"), self.massCulc)
         QtCore.QObject.connect(self.pushButton_m2, QtCore.SIGNAL("pressed()"), self.massTally)
-        QtCore.QObject.connect(self.pushButton_m20, QtCore.SIGNAL("pressed()"), self.massTally2)
+        #QtCore.QObject.connect(self.pushButton_m20, QtCore.SIGNAL("pressed()"), self.massTally2)
         QtCore.QObject.connect(self.pushButton_m3, QtCore.SIGNAL("pressed()"), self.massImput)
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "dustRemovalMachine", None))
